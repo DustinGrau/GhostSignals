@@ -1,0 +1,8 @@
+Filetype: IR signals file
+Version: 1
+#
+name: RAW_19_1
+type: raw
+frequency: 38000
+duty_cycle: 0.330000
+data: 1774 1178 612 612 581 612 581 1184 606 612 581 1209 581 1209 581 612 581 1182 608
