@@ -6,9 +6,9 @@ Provide a means of triggering the ghost sounds from the Haslab Ghost Trap using 
 
 ## How It Works
 
-When the Haslab PKE Meter is set to full power (wings fully up) there is a single pulse of IR data sent from an LED behind the taser lens. See a video of this by use of a full-spectrum camera using a 580nm IR filter: [IR Blast](Video/IR_Blast.mp4)
+When the Haslab PKE Meter is set to full power (wings fully up) there is a single pulse of IR data sent from an LED behind the taser lens. See a video of this by use of a full-spectrum camera using a 980nm IR filter: [IR Blast](Video/IR_Blast.mp4)
 
-To capture the signal, a Flipper Zero was used to capture the IR signal from the PKE as a "remote". The resulting data consists of a 38kHz carrier frequency which then pulses light in a pattern of 19 steps of on/off signaling. Replaying the signal proved there is no variation in the data, a single action triggers the ghost sounds every time: [Proof of Concept](Video/POC.mp4)
+To capture the signal, a Flipper Zero was used to record the IR signal from the PKE as a "remote". The resulting data consists of a 38kHz carrier frequency a total of 19 pulses for the signaling. Replaying the signal proved there is no obvious variation in the data, meaning a single command triggers the ghost sounds every time: [Proof of Concept](Video/POC.mp4)
 
 ## Bill of Materials
 
