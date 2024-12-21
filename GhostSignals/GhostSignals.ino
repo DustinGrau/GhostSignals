@@ -20,26 +20,17 @@
 // https://github.com/Arduino-IRremote/Arduino-IRremote
 #include <IRremote.hpp>
 
-// Define the IR LED pin (D9 which has PWM)
+// Define the IR LED pin (D9 supports PWM which is required)
 const int irLedPin = 9;
 
-#define CARRIER_KHZ 38
-#define DELAY_AFTER_SEND 5000
+#define CARRIER_KHZ 38 // DO NOT change this value!
+#define DELAY_AFTER_SEND 5000 // Change as desired for looping delay
 
 // Send a similar signal as captured from the PKE device at full power
 const uint16_t irSignal[] = {
-  1774, 1178, 612, 612, 581,
-  612, 581, 1184, 606, 612,
-  581, 1209, 581, 1209, 581,
-  612, 581, 1182, 608
+  1770, 1200, 600, 600, 600, 600, 580, 1200, 600, 600,
+  580, 1200, 600, 1200, 580, 600, 580, 1200, 600
 };
-
-//const uint16_t irSignal[] = {
-//  1770, 1200, 600, 600, 600,
-//  600, 580, 1200, 600, 600,
-//  580, 1200, 600, 1200, 580,
-//  600, 580, 1200, 600
-//};
 
 void setup() {
   // Initialize the IR LED pin
