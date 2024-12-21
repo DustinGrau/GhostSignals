@@ -23,33 +23,33 @@
 // Define the IR LED pin (D9 which has PWM)
 const int irLedPin = 9;
 
-#define LED_BUILTIN 13
-#define SIGNAL_KHZ 38
+#define CARRIER_KHZ 38
 #define DELAY_AFTER_SEND 5000
 
 // Send a similar signal as captured from the PKE device at full power
 const uint16_t irSignal[] = {
-    1774, 1178, 612, 612, 581, 612, 581, 1184, 
-    606, 612, 581, 1209, 581, 1209, 581, 612, 
-    581, 1182, 608
+  1774, 1178, 612, 612, 581,
+  612, 581, 1184, 606, 612,
+  581, 1209, 581, 1209, 581,
+  612, 581, 1182, 608
 };
 
+//const uint16_t irSignal[] = {
+//  1770, 1200, 600, 600, 600,
+//  600, 580, 1200, 600, 600,
+//  580, 1200, 600, 1200, 580,
+//  600, 580, 1200, 600
+//};
+
 void setup() {
-    pinMode(LED_BUILTIN, OUTPUT);
-
-    Serial.begin(115200);
-
-    // Initialize the IR LED pin
-    IrSender.begin(irLedPin);
+  // Initialize the IR LED pin
+  IrSender.begin(irLedPin);
 }
 
 void loop() {
-    // Send the raw IR data
-    digitalWrite(LED_BUILTIN, HIGH); // Turn LED on
-    IrSender.sendRaw(irSignal, sizeof(irSignal) / sizeof(irSignal[0]), SIGNAL_KHZ);
-    delay(1000);
-    digitalWrite(LED_BUILTIN, LOW); // Turn LED off
+  // Send the raw IR data
+  IrSender.sendRaw(irSignal, sizeof(irSignal) / sizeof(irSignal[0]), CARRIER_KHZ);
 
-    // Wait before sending the signal again
-    delay(DELAY_AFTER_SEND);
+  // Wait before sending the signal again
+  delay(DELAY_AFTER_SEND);
 }
